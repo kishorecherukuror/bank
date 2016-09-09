@@ -2,7 +2,7 @@
 
 <h1>Listing Users</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Fname</th>
@@ -29,6 +29,11 @@
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user.accounts.present? %>
+          <td><%= link_to 'Show Profile', user %></td>
+        <% else %>
+          <td><%= link_to "Add Account", accounts_path(user) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
