@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
 	validates :fname, presence: true
 	validates :lname, presence: true
 	#validate :at_least_18
@@ -11,4 +12,6 @@ def at_least_18
     if self.age
       errors.add(:age, 'You must be 18 years or older.') if self.age > 18.years.ago.to_date
     end
+	has_many :accounts
+
 end
