@@ -30,13 +30,6 @@ ActiveRecord::Schema.define(version: 20160909123842) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "deposits", force: :cascade do |t|
-    t.integer  "amount"
-    t.string   "dep_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "fname"
     t.string   "lname"
@@ -47,13 +40,6 @@ ActiveRecord::Schema.define(version: 20160909123842) do
     t.string   "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "withdraws", force: :cascade do |t|
-    t.integer  "amount"
-    t.string   "withdraw_date"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
 end

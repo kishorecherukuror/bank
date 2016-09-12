@@ -5,7 +5,7 @@ class AccountsController < ApplicationController
   end
 
   def create
-  	binding.pry
+  	#binding.pry
   	@account = Account.new(accounts_params)
   	if @account.save
   		redirect_to root_path

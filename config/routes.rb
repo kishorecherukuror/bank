@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'account/:id' , to: "accounts#new", as: "accounts"
-
+   get 'account/new' 
+   
   get 'accounts/create'
   post 'accounts/create'
   get 'accounts/deposit'

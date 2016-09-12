@@ -41,12 +41,14 @@
   <th> Account Number</th>
   <th> Account Type</th>
   <th>Branch</th>
+  <th>Amount</th>
 </tr>
 <tr>
   <% @user.accounts.each do  |acc|%>
    <td> <%= acc.account_number %> </td>
     <td> <%= acc.account_type %> </td>
-    <td><%= acc.branch.area %></td></tr>
+    <td><%= acc.branch.area %></td>
+    <td><%= acc.amount %></td></tr>
   <% end %>
 </tr>
 </table>
