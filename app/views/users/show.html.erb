@@ -36,7 +36,7 @@
 </p>
 
 <h3>Account Details</h3>
-<table border="1">
+<table class="table">
 <tr>
   <th> Account Number</th>
   <th> Account Type</th>
@@ -47,7 +47,7 @@
   <% @user.accounts.each do  |acc|%>
    <td> <%= acc.account_number %> </td>
     <td> <%= acc.account_type %> </td>
-    <td><%= acc.branch.area %></td>
+    <td><%= acc.branch.area unless acc.branch.nil? %></td>
     <td><%= acc.amount %></td></tr>
   <% end %>
 </tr>
