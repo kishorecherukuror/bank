@@ -184,11 +184,8 @@ DEPENDENCIES
   spring
   sqlite3
   turbolinks
-<<<<<<< HEAD
   tzinfo-data
-=======
   twitter-bootstrap-rails
->>>>>>> 4ece07290d4410cbe876dc2b644697e3185326cb
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
