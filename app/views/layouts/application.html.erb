@@ -38,6 +38,8 @@
   </head>
   <body>
 
+
+
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -48,14 +50,22 @@
         <a class="navbar-brand" href="http://localhost:3000/">Home</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
+
             <li><%= link_to "Deposit", accounts_deposit_path  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <% if current_user %>
+              <li><%= link_to "Log out", log_out_path %></li>
+            <% else %>
+              <li><%= link_to "Sign up", sign_up_path %></li>
+              <li> <%= link_to "log in", log_in_path %></li>
+            <% end %>
+
           </ul>
         </div>
       </div>
     </div>
-
+     <% if current_user %>
+        <h5> Hi <%= current_user.email %></h5>
+     <% end %>
     <div class="container">
       <div class="row">
         <div class="col-lg-9">
