@@ -1,9 +1,19 @@
 <%= form_for @account, url: {:action => "create"} do |f| %>
-	<p>Account Numnber: <%= f.text_field :account_number %></p>
-	<p>Account Type: <%= f.text_field :account_type %></p>
-	<%= f.hidden_field :user_id,  value: @user.id %>
-
-	<%= f.select :branch_id, options_from_collection_for_select(Branch.all, "id", "area"), include_blank:  true %>
-	<p><%= f.submit %></p>
-
+<table>
+	<tr>
+		<td height="50">Account Numnber:</td>
+		<td><%= f.text_field :account_number %></td>
+	</tr>
+	<tr>	
+		<td height="50">Account Type:</td>
+		<td><%= f.text_field :account_type %><%= f.hidden_field :user_id,  value: @user.id %></td>
+	</tr>	
+	<tr>
+		<td height="50">Branch:</td>
+		<td><%= f.select :branch_id, options_from_collection_for_select(Branch.all, "id", "area"), include_blank:  true %></td>
+	</tr>
+	<tr>
+		<td colspan=2  height="50"><%= f.submit %></td>
+	</tr>	
+</table>
 <% end %>
