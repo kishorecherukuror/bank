@@ -3,7 +3,7 @@
 	<p>Account Type: <%= f.text_field :account_type %></p>
 	<%= f.hidden_field :user_id,  value: @user.id %>
 
-	<%= f.select :branch_id, options_from_collection_for_select(Branch.all, "id", "area"), include_blank:  true %>
+	<p>Branch: <%= f.select :branch_id, options_from_collection_for_select(Branch.all, "id", "area"), include_blank:  true %></p>
 	<p><%= f.submit %></p>
 
 <% end %>
