@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909123842) do
+ActiveRecord::Schema.define(version: 20160914123101) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "account_number"
@@ -45,8 +45,10 @@ ActiveRecord::Schema.define(version: 20160909123842) do
     t.integer  "age"
     t.text     "address"
     t.string   "gender"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "password_hash"
+    t.string   "password_salt"
   end
 
   create_table "withdraws", force: :cascade do |t|
