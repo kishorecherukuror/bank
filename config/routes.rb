@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :transactions
   get 'sessions/new'
 
   get 'account/:id' , to: "accounts#new", as: "accounts"

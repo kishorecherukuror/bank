@@ -15,8 +15,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry'
 gem "twitter-bootstrap-rails"
+gem 'will_paginate-bootstrap'
 
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'will_paginate', '~> 3.1.0'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 group :development, :test do
   gem 'byebug'
