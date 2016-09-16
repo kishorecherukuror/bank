@@ -9,10 +9,6 @@ Rails.application.routes.draw do
   post 'accounts/deposit'
 
 
-get "log_out" => "sessions#destroy", :as => "log_out"
-get "log_in" => "sessions#new", :as => "log_in"
-get "sign_up" => "users#new", :as => "sign_up"
-root :to => "sessions#new"
 resources :users
 resources :sessions
 
@@ -21,7 +17,10 @@ resources :sessions
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   #root 'users#index'
+get "log_out" => "sessions#destroy", :as => "log_out"
+get "log_in" => "sessions#new", :as => "log_in"
+get "sign_up" => "users#new", :as => "sign_up"
+root :to => "sessions#new"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
