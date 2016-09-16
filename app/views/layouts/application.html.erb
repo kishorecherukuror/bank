@@ -52,6 +52,7 @@
           <ul class="nav navbar-nav">
 
             <li><%= link_to "Deposit", accounts_deposit_path  %></li>
+            <li><%= link_to "Withdraw", accounts_withdraw_path  %></li>
             <% if current_user %>
               <li><%= link_to "Log out", log_out_path %></li>
             <% else %>

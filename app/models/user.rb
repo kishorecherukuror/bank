@@ -1,12 +1,14 @@
 class User < ActiveRecord::Base
 	validates :fname, presence: true
 	validates :lname, presence: true
-	
+	#validate :at_least_18
 	has_many :accounts
 	has_many :accounts
 	before_save :encrypt_password
 	attr_accessor  :password, :password_confirmation
-	validates_inclusion_of :age, :in=>Date.new(1900)..Time.now.years_ago(18).to_date, :message=>'You must be 18 years or older'
+	#validates_inclusion_of :age, :in=>Date.new(1900)..Time.now.years_ago(18).to_date, :message=>'You must be 18 years or older'
+
+
 	
 	def self.authenticate(email, password)
 	    user = find_by_email(email)

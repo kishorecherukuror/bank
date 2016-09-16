@@ -22,7 +22,18 @@ class AccountsController < ApplicationController
 	  	if @account.update_attributes(:amount => @amount)
 	  		redirect_to root_path
 	  	end
-	end
+	 end
+  end
+
+  def withdraw
+    @accounts = Account.all
+    unless params[:account].nil?
+      @account = Account.find params[:account]
+      @amount = @account.amount.to_i - params[:amount].to_i
+      if @account.update_attributes(:amount => @amount)
+        redirect_to root_path
+      end
+   end
   end
 
   private
