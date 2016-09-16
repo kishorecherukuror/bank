@@ -1,7 +1,7 @@
 <%= form_tag do %>
 
-	<p>Account Number: <%= select_tag "account",  options_from_collection_for_select(@accounts, "id", "account_number") , :include_blank  => true%></p>
-	<p> Amount: <%= text_field_tag "amount" %></p>
-	<p><%= submit_tag "Deposit Amount" %></p>
+	<p>Account Number: <%= select_tag "account",  options_from_collection_for_select(@accounts, "id", "account_number") , :include_blank  => true, :class => "form-control" %></p>
+	<p> Amount: <%= text_field_tag "amount", "", :class => "form-control" %></p>
+	<p><%= submit_tag "Deposit Amount", :class => 'btn btn-large btn-primary' %></p>
 
 <% end %>

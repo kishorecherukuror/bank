@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   post 'accounts/create'
   get 'accounts/deposit'
   post 'accounts/deposit'
-
+  get 'accounts/withdraw'
+  post 'accounts/withdraw'
 
 resources :users
 resources :sessions
