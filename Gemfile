@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry'
 gem "twitter-bootstrap-rails"
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'will_paginate', '~> 3.1.0'
+
 group :development, :test do
   gem 'byebug'
 end
