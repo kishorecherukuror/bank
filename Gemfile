@@ -13,6 +13,8 @@ gem 'pry'
 gem "twitter-bootstrap-rails"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
+gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   gem 'byebug'
