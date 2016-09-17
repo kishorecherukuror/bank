@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
 	validates :fname, presence: true
 	validates :lname, presence: true
+	validates_length_of :password, minimum: 6
+	validates :password, confirmation: true
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
+    uniqueness: { case_sensitive: false }
 	#validate :at_least_18
 	has_many :accounts, dependent: :destroy
 	before_save :encrypt_password

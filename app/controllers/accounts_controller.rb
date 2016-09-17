@@ -12,10 +12,10 @@ class AccountsController < ApplicationController
   	else
   		render 'new'
   	end
-  end
+  endgit 
 
   def deposit
-  	@accounts = Account.all
+  	@account = Account.all
   	unless params[:account].nil?
 	  	@account = Account.find params[:account]
 	  	@amount = @account.amount.to_i + params[:amount].to_i
@@ -43,4 +43,5 @@ class AccountsController < ApplicationController
   def accounts_params
   	params.require(:account).permit!
   end
+end 
 end
