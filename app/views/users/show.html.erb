@@ -3,6 +3,9 @@
 <p>
   <strong>Fname:</strong>
   <%= @user.fname %>
+        <span style="float:right;width: 30%;">
+            <%= image_tag @user.photo.url(:medium) %>
+        </span>
 </p>
 
 <p>
@@ -19,6 +22,9 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+
+<% #= image_tag @user.photo.url %>
+<% #= #image_tag @user.photo.url(:thumb) %>
 
 <p>
   <strong>Age:</strong>
