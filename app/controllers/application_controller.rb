@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 	helper_method :current_user
     before_action :check_user
 
+    require 'csv'
+
 	private
 
 	def current_user

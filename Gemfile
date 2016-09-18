@@ -14,7 +14,10 @@ gem "twitter-bootstrap-rails"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
-gem "paperclip", "~> 5.0.0"
+#gem "paperclip", "~> 5.0.0"
+
+gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'byebug'

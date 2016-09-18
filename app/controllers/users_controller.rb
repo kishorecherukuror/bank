@@ -4,7 +4,19 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate(:page => params[:page], :per_page => 2)
+      @users = User.paginate(:page => params[:page], :per_page => 2)
+
+      #@users = User.all
+
+      respond_to do |format|
+      format.html
+      format.csv do
+        @users = User.all
+        headers['Content-Disposition'] = "attachment; filename=\"user-list\""
+        headers['Content-Type'] ||= 'text/csv'
+      end
+    end
+
   end
 
   # GET /users/1
@@ -28,6 +40,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        TestMailer.greeting_email(@user).deliver
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
