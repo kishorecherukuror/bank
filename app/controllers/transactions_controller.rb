@@ -4,7 +4,9 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = Transaction.all
+    @user = User.find params[:format]
+    binding.pry
+    @transactions = @user.transactions
   end
 
   # GET /transactions/1

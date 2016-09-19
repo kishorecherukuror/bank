@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	#validates :lname, presence: true
 	#validate :at_least_18
 	has_many :accounts, dependent: :destroy
+	has_many :transactions
 	before_save :encrypt_password
 	attr_accessor  :password, :password_confirmation
 	#validates_inclusion_of :age, :in=>Date.new(1900)..Time.now.years_ago(18).to_date, :message=>'You must be 18 years or older'
@@ -12,7 +13,7 @@ class User < ActiveRecord::Base
                   storage: :s3,
                   :s3_region => 'us-west-2',
                   :s3_host_name => 's3-us-west-2.amazonaws.com',
-                  s3_credentials: {access_key_id: 'AKIAIKBK7ZQDYZU4B2JQ', secret_access_key: '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' },
+                  s3_credentials: {access_key_id: 'AKIAIJRODG3ZJRYQLKAA', secret_access_key: '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' },
                   bucket: "elasticbeanstalk-us-west-2-910437440261"
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 

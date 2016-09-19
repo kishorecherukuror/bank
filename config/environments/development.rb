@@ -22,7 +22,7 @@ config.action_mailer.smtp_settings = {
  :address              => "smtp.gmail.com",
  :port                 => 587,
  :user_name            => 'mail2akkinapalli@gmail.com',
- :password             => 'satish.kumar',
+ :password             => 'akki#GM@A510e',
  :authentication       => "plain",
 :enable_starttls_auto => true
 }
