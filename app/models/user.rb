@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
                                      original: "-quality 85 -strip" },
                   storage: :s3,
                   :s3_region => 'us-west-2',
+                  :s3_host_name => 's3-us-west-2.amazonaws.com',
                   s3_credentials: {access_key_id: 'AKIAIKBK7ZQDYZU4B2JQ', secret_access_key: '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' },
                   bucket: "elasticbeanstalk-us-west-2-910437440261"
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
