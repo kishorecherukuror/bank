@@ -1,0 +1,1 @@
+json.array! @transcations, partial: 'transcations/transcation', as: :transcation

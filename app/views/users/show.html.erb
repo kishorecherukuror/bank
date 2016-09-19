@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @user.fname %>
+</p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @user.lname %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @user.age %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+</br>
+
+<%= image_tag @user.avatar.url %>
+<%= image_tag @user.avatar.url(:medium) %>
+<%= image_tag @user.avatar.url(:thumb) %>
+
+<% if @user.accounts.present? %>
+
+<h3>Account Details</h3>
+
+<table class="table table-bordered">
+<tr>
+	<th>Account Number</th>
+    <th>Account Type</th>
+    <th>Branch</th>
+    <th>Amount</th>
+</tr>
+
+<% @user.accounts.each do  |acc| %>
+
+<tr>
+   <td><%= acc.account_number %> </td>
+   <td><%= acc.account_type %> </td>
+   <td><%= acc.branch.area %> </td>
+   <td><%= acc.amount %> </td>
+</tr>
+
+<% end %>
+</table>
+
+</br>
+<p><%= link_to 'Add more Account', accounts_path(@user) %> </p>
+<% end %>
+</br> </br>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

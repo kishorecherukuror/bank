@@ -1,0 +1,1 @@
+json.partial! "transcations/transcation", transcation: @transcation
