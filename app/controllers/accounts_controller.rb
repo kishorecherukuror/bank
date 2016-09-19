@@ -33,7 +33,7 @@ class AccountsController < ApplicationController
      @account=@user.accounts.all
    	  unless params[:account].nil?
    	  	  @account=Account.find params[:account]
-   	  	  @amount=@account.amount.to_i -params[:amount].to_i
+   	  	  @amount=@account.amount.to_i - params[:amount].to_i
           if @amount < 0
             flash[:error] = "Amount Exceded"
             redirect_to accounts_withdraw_path,:notice => "Amount Exceded"
