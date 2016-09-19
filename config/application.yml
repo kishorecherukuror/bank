@@ -1,5 +1,3 @@
-# Add the required credentials here and rename the file application.yml.   
-
 api_key: 'key-0d5f9662a65b1cdd2d511d14260e9fa8'
 domain: 'sandboxb933cf68e67e4732a02edc0669295cac.mailgun.org'
 username: 'postmaster@sandboxb933cf68e67e4732a02edc0669295cac.mailgun.org'
@@ -7,7 +5,7 @@ password: 'e95f7d52c130ca1b688feefe4f6864a2'
 gmail_username: 'anshuman.prusty@gmail.com'
 gmail_password: 'Adi220909'
 
-# Examples
+# Add configuration values here, as shown below.
 #
 # pusher_app_id: "2954"
 # pusher_key: 7381a978f7dd7f9a1117

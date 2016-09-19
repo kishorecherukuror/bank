@@ -17,7 +17,7 @@ class TestMailer < ApplicationMailer
                       :to      => @user.email,
   	                  :subject => 'Sample Mail using Mailgun API',
   	                  :text    => 'Mail is sent using Mailgun API via mailgun'}
-
+    binding.pry
   	mg_client.send_message ENV['domain'], message_params
 
   end
