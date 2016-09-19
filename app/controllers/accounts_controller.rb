@@ -36,7 +36,7 @@ class AccountsController < ApplicationController
    	  	  @amount=@account.amount.to_i - params[:amount].to_i
           if @amount < 0
             flash[:error] = "Amount Exceded"
-            redirect_to accounts_withdraw_path, :notice => "Amount Exceded"
+            redirect_to accounts_withdraw_path,:notice => "Amount Exceded"
    	  	  elsif @account.update_attributes(:amount=>@amount)
    	  	   redirect_to root_path 
          end
