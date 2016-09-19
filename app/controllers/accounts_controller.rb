@@ -33,7 +33,7 @@ class AccountsController < ApplicationController
 
       if @amount < 0
         flash[:error] = "Amount is exeeced"
-        redirect_to accounts_withdraw_path          
+        redirect_to accounts_withdraw_path    
       elsif @account.update_attributes(:amount => @amount)
         redirect_to users_path
       end

@@ -6,7 +6,12 @@
 	</tr>
 	<tr>	
 		<td height="50">Account Type:</td>
-		<td><%= f.text_field :account_type %><%= f.hidden_field :user_id,  value: @user.id %></td>
+		<td><%= f.text_field :account_type %>
+<% if params[:account].present? %>
+<%= f.hidden_field :user_id,  value: params[:account][:user_id] %></td>
+<% else %>
+		<%= f.hidden_field :user_id,  value: @user.id %></td>
+<% end %>
 	</tr>	
 	<tr>
 		<td height="50">Branch:</td>

@@ -1,0 +1,20 @@
+# Add the required credentials here and rename the file application.yml.   
+
+api_key: 'key-0d5f9662a65b1cdd2d511d14260e9fa8'
+domain: 'sandboxb933cf68e67e4732a02edc0669295cac.mailgun.org'
+username: 'postmaster@sandboxb933cf68e67e4732a02edc0669295cac.mailgun.org'
+password: 'e95f7d52c130ca1b688feefe4f6864a2'
+gmail_username: 'anshuman.prusty@gmail.com'
+gmail_password: 'Adi220909'
+
+# Examples
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU

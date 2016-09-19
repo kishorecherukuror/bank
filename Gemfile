@@ -16,6 +16,8 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 #gem "paperclip", "~> 5.0.0"
 
+gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
+
 gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
 gem 'aws-sdk'
 
