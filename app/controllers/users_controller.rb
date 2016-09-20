@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate(:page => params[:page], per_page: 10)
+    @users = User.paginate(:page => params[:page], per_page: 2)
   end
 
   # GET /users/1
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    binding.pry
+    #binding.pry
     respond_to do |format|
       if @user.save
         UserMailer.user_inform(@user).deliver

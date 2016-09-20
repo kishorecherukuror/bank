@@ -30,13 +30,6 @@ ActiveRecord::Schema.define(version: 20160919131055) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "deposits", force: :cascade do |t|
-    t.integer  "amount"
-    t.string   "dep_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "transactions", force: :cascade do |t|
     t.string   "transaction_type"
     t.integer  "amount"
@@ -65,17 +58,6 @@ ActiveRecord::Schema.define(version: 20160919131055) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-  end
-
-  create_table "withdraws", force: :cascade do |t|
-    t.integer  "amount"
-    t.string   "withdraw_date"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
 end

@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Transactions', transactions_path(@user) %>
+
+<div class = "form-group">
+<%= link_to 'Transactions', transactions_path(@user), class: 'btn btn-warning' %>
+</div>
+
 <p>
   <strong>Fname:</strong>
   <%= @user.fname %>
@@ -58,5 +62,8 @@
   
   
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+<div class = "form-group">
+<%= link_to 'Back', users_path, class: 'btn btn-info'%>
+<%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-danger' %>
+</div>

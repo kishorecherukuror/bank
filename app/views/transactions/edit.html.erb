@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @transaction %> |
-<%= link_to 'Back', transactions_path %>
+<div class = "form-group" >
+<%= link_to 'Show', @transaction, class: 'btn btn-primary' %> |
+<%= link_to 'Back', transactions_path, class: 'btn btn-primary' %>
+</div >
