@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   post 'accounts/withdraw'
 
 
-  resources :users
+  resources :users do
+    collection do
+      post 'import'
+    end
+  end
+
   resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

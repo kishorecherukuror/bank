@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	require 'csv'
 	#validates :fname, presence: true
 	#validates :lname, presence: true
 	#validate :at_least_18
@@ -18,6 +19,31 @@ class User < ActiveRecord::Base
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 	
+	def self.to_csv
+		attributes = %w{id fname lname ful_name}
+
+		CSV.generate(headers: true) do |csv|
+			csv << attributes
+			all.each do |user|
+        		csv << attributes.map{ |attr| user.send(attr) }
+     		end
+		end
+	end
+
+	def self.import(file)
+		binding.pry
+		CSV.foreach(file.path, headers: true) do |row|
+			user_hash = row.to_hash
+			user = User.where(id: user_hash["id"])
+
+		      if user.count == 1
+		        user.first.update_attributes(user_hash)
+		      else
+       		 	User.create!(user_hash)
+     		  end # end if !product.nil?
+		end
+	end
+
 	def self.authenticate(email, password)
 	    user = find_by_email(email)
 	    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)

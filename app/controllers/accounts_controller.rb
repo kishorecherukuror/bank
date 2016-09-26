@@ -21,7 +21,7 @@ class AccountsController < ApplicationController
 	  	@account = Account.find params[:account]
 	  	@amount = @account.amount.to_i + params[:amount].to_i
 
-      @account.transactions.create(:transaction_type => "deposit", :amount => params[:amount].to_i, trasaction_date: Time.now, :user_id => current_user.id )
+      @account.transactions.create(:transaction_type => "deposit", :amount => params[:amount].to_i, trasaction_date: Time.now, :user_id => @account.user_id )
 
 	  	if @account.update_attributes(:amount => @amount)
 	  		redirect_to root_path

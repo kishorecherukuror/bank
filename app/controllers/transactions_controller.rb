@@ -5,7 +5,6 @@ class TransactionsController < ApplicationController
   # GET /transactions.json
   def index
     @user = User.find params[:format]
-    #binding.pry
     @transactions = @user.transactions
   end
 
